@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 
 export function Dashboard() {
-  const [now, setNow] = useState<string>('');
+  const [now, setNow] = useState<string>(new Date().toLocaleTimeString());
   useEffect(() => {
     const id = setInterval(() => setNow(new Date().toLocaleTimeString()), 1000);
-    setNow(new Date().toLocaleTimeString());
     return () => clearInterval(id);
   }, []);
   return (
