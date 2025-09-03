@@ -13,6 +13,12 @@ const items: Item[] = [
     ],
   },
   {
+    label: 'Data',
+    children: [
+      { label: 'Todos', to: '/todos' },
+    ],
+  },
+  {
     label: 'Management',
     children: [
       { label: 'Users', to: '/settings#users' },
