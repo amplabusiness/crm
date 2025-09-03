@@ -18,6 +18,7 @@ const items: Item[] = [
       { label: 'Todos', to: '/todos' },
       { label: 'Especialistas', to: '/especialistas' },
       { label: 'Importar', to: '/importar' },
+      { label: 'CNPJa', to: '/cnpja' },
     ],
   },
   {
