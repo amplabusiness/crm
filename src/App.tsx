@@ -3,6 +3,7 @@ import { Dashboard } from './pages/Dashboard';
 import { Reports } from './pages/Reports';
 import { Settings } from './pages/Settings';
 import { Sidebar } from './components/Sidebar';
+import { Todos } from './features/todos/Todos';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <nav className="flex items-center gap-3 text-sm">
           <NavLink className={({isActive})=>`px-2 py-1 rounded ${isActive? 'bg-brand-50 text-brand-700':'text-slate-600 hover:text-slate-800'}`} to="/">Home</NavLink>
           <NavLink className={({isActive})=>`px-2 py-1 rounded ${isActive? 'bg-brand-50 text-brand-700':'text-slate-600 hover:text-slate-800'}`} to="/reports">Reports</NavLink>
+          <NavLink className={({isActive})=>`px-2 py-1 rounded ${isActive? 'bg-brand-50 text-brand-700':'text-slate-600 hover:text-slate-800'}`} to="/todos">Todos</NavLink>
           <NavLink className={({isActive})=>`px-2 py-1 rounded ${isActive? 'bg-brand-50 text-brand-700':'text-slate-600 hover:text-slate-800'}`} to="/settings">Settings</NavLink>
         </nav>
       </header>
@@ -23,6 +25,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Dashboard/>} />
           <Route path="/reports/*" element={<Reports/>} />
+          <Route path="/todos" element={<Todos/>} />
           <Route path="/settings" element={<Settings/>} />
         </Routes>
       </main>
