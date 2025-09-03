@@ -31,6 +31,7 @@ export default function App() {
           <Route path="/reports/*" element={<Reports/>} />
           <Route path="/todos" element={<Todos/>} />
           <Route path="/especialistas" element={<Experts/>} />
+          <Route path="/importar" element={<ImportPage/>} />
           <Route path="/settings" element={<Settings/>} />
         </Routes>
       </main>
