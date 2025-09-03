@@ -5,6 +5,7 @@ import { Settings } from './pages/Settings';
 import { Sidebar } from './components/Sidebar';
 import { Todos } from './features/todos/Todos';
 import Experts from './pages/Experts';
+import ImportPage from './pages/Import';
 
 export default function App() {
   return (
