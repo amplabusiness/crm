@@ -23,6 +23,7 @@ export default function App() {
           <NavLink className={({isActive})=>`px-2 py-1 rounded ${isActive? 'bg-brand-50 text-brand-700':'text-slate-600 hover:text-slate-800'}`} to="/todos">Todos</NavLink>
           <NavLink className={({isActive})=>`px-2 py-1 rounded ${isActive? 'bg-brand-50 text-brand-700':'text-slate-600 hover:text-slate-800'}`} to="/especialistas">Especialistas</NavLink>
           <NavLink className={({isActive})=>`px-2 py-1 rounded ${isActive? 'bg-brand-50 text-brand-700':'text-slate-600 hover:text-slate-800'}`} to="/importar">Importar</NavLink>
+          <NavLink className={({isActive})=>`px-2 py-1 rounded ${isActive? 'bg-brand-50 text-brand-700':'text-slate-600 hover:text-slate-800'}`} to="/cnpja">CNPJa</NavLink>
           <NavLink className={({isActive})=>`px-2 py-1 rounded ${isActive? 'bg-brand-50 text-brand-700':'text-slate-600 hover:text-slate-800'}`} to="/settings">Settings</NavLink>
         </nav>
       </header>
