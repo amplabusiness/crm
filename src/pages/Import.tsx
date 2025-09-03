@@ -6,13 +6,22 @@ export default function ImportPage(){
   const [error,setError]=useState<string|null>(null);
   const [loading,setLoading]=useState(false);
 
+  function onlyDigits(s:string){return (s||'').replace(/\D+/g,'');}
+  function isCNPJ(d:string){return d.length===14;}
+
   async function submit(){
     setLoading(true); setError(null); setResp(null);
     try{
-      const r=await fetch('/api/import-cnpjs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text})});
-      const j=await r.json();
-      if(!r.ok||j.ok===false) throw new Error(j.error||'Erro');
-      setResp(j);
+      const { getSupabase } = await import('../lib/supabaseClient');
+      const sb = getSupabase();
+      const raw = text.split(/\r?\n|,|;|\s+/).filter(Boolean);
+      const cleaned = Array.from(new Set(raw.map(onlyDigits).filter(isCNPJ)));
+      if(cleaned.length===0) throw new Error('Nenhum CNPJ válido encontrado');
+      // upsert
+      const rows = cleaned.map(c=>({ cnpj: c }));
+      const { error } = await sb.from('empresas').upsert(rows, { onConflict: 'cnpj' });
+      if(error) throw new Error(error.message);
+      setResp({ ok:true, inserted: rows.length });
     }catch(e:any){ setError(String(e.message||e)); }
     finally{ setLoading(false); }
   }
