@@ -16,6 +16,7 @@ const items: Item[] = [
     label: 'Data',
     children: [
       { label: 'Todos', to: '/todos' },
+      { label: 'Especialistas', to: '/especialistas' },
     ],
   },
   {
