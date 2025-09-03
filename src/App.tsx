@@ -6,6 +6,7 @@ import { Sidebar } from './components/Sidebar';
 import { Todos } from './features/todos/Todos';
 import Experts from './pages/Experts';
 import ImportPage from './pages/Import';
+import CnpjaSync from './pages/CnpjaSync';
 
 export default function App() {
   return (
