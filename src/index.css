@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{ --brand:#1e90ff }
+
+.app-shell{ @apply grid min-h-screen grid-cols-[260px_1fr] grid-rows-[56px_1fr]; grid-template-areas: 'sidebar header' 'sidebar main'; }
+.app-header{ grid-area: header; }
+.app-sidebar{ grid-area: sidebar; }
+.app-main{ grid-area: main; }
